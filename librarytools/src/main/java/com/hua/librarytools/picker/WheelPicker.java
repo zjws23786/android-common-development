@@ -102,8 +102,9 @@ public abstract class WheelPicker extends ConfirmDialog<View> {
         this.offset = offset;
     }
 
-    /**
+    /**\
      * 设置是否禁用循环
+     * @param canLoop canLoop = false 禁用
      */
     public void setCanLoop(boolean canLoop) {
         this.canLoop = canLoop;

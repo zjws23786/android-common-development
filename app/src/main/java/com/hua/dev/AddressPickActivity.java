@@ -1,11 +1,12 @@
 package com.hua.dev;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
+import com.hua.dev.base.BaseActivity;
 import com.hua.librarytools.picker.AddressPicker;
 import com.hua.librarytools.picker.bean.City;
 import com.hua.librarytools.picker.bean.County;
@@ -15,7 +16,8 @@ import com.hua.librarytools.utils.ConvertUtils;
 
 import java.util.ArrayList;
 
-public class AddressPickActivity extends Activity implements OnLinkageListener{
+public class AddressPickActivity extends BaseActivity implements OnLinkageListener, View.OnClickListener {
+    private Button addressPickerBtn;
     private boolean hideProvince = false;
     private boolean hideCounty = false;
     private String selectedProvince = "广东省", selectedCity = "广州市", selectedCounty = "天河区";
@@ -24,18 +26,50 @@ public class AddressPickActivity extends Activity implements OnLinkageListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address_pick);
-        findViewById(R.id.address_picker_tv).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                init();
-            }
-        });
+        addressPickerBtn = (Button) findViewById(R.id.address_picker_btn);
+
+    }
+
+    @Override
+    protected void setLayout() {
+        addressPickerBtn.setOnClickListener(this);
+    }
+
+    @Override
+    protected void findViewById() {
+
+    }
+
+    @Override
+    protected void setListener() {
 
     }
 
 
-    private void init() {
+    @Override
+    protected void init() {
 
+
+    }
+
+
+
+    @Override
+    public void onAddressPicked(Province province, City city, County county) {
+        Toast.makeText(this,province.getAreaName() + city.getAreaName() + county.getAreaName(),Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.address_picker_btn:
+                provincialTownsPickMethod();
+                break;
+        }
+    }
+
+    //省-城市-县级
+    private void provincialTownsPickMethod() {
         ArrayList<Province> result = new ArrayList<>();
         try {
             String json = ConvertUtils.toString(this.getAssets().open("city.json"));
@@ -59,10 +93,4 @@ public class AddressPickActivity extends Activity implements OnLinkageListener{
             e.printStackTrace();
         }
     }
-
-    @Override
-    public void onAddressPicked(Province province, City city, County county) {
-        Toast.makeText(this,province.getAreaName() + city.getAreaName() + county.getAreaName(),Toast.LENGTH_SHORT).show();
-    }
-
 }
