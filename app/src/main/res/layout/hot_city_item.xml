@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/hot_city_name"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="广州"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:textSize="14dp"
+        android:textColor="#4f4f4f"
+        android:background="@drawable/click_bg_rectangle"
+        android:layout_marginBottom="12dp"/>
+
+</LinearLayout>

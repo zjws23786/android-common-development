@@ -23,7 +23,8 @@
         <activity android:name=".ApplicationCacheActivity" />
         <activity android:name=".AboutTimeActivity" />
         <activity android:name=".ActivityInsideChoiceActivity" />
-        <activity android:name=".SingleChoiceActivity"></activity>
+        <activity android:name=".SingleChoiceActivity" />
+        <activity android:name=".CityLocationActivity"></activity>
     </application>
 
 </manifest>

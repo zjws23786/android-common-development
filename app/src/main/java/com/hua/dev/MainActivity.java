@@ -13,6 +13,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button timeBtn;
     private Button activity_inside_choice_btn;
     private Button single_option_btn;
+    private Button select_city_btn;
 
     @Override
     protected void setLayout() {
@@ -26,6 +27,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         timeBtn = (Button) findViewById(R.id.time_btn);
         activity_inside_choice_btn = (Button) findViewById(R.id.activity_inside_choice_btn);
         single_option_btn = (Button) findViewById(R.id.single_option_btn);
+        select_city_btn = (Button) findViewById(R.id.select_city_btn);
     }
 
     @Override
@@ -35,6 +37,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         timeBtn.setOnClickListener(this);
         activity_inside_choice_btn.setOnClickListener(this);
         single_option_btn.setOnClickListener(this);
+        select_city_btn.setOnClickListener(this);
     }
 
     @Override
@@ -60,6 +63,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.single_option_btn:
                 intent = new Intent(MainActivity.this, SingleChoiceActivity.class);
+                break;
+            case R.id.select_city_btn:
+                intent = new Intent(MainActivity.this, CityLocationActivity.class);
                 break;
         }
         if(intent != null){

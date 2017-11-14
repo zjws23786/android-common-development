@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/spacing_view"
+        android:layout_width="match_parent"
+        android:layout_height="8.5dp"
+        android:background="#f6f6f6" />
+
+    <View
+        android:id="@+id/spacing_view_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
+    <TextView
+        android:id="@+id/pinned_header_tv"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_centerVertical="true"
+        android:background="#fff"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="15dp"
+        android:textIsSelectable="false"
+        android:textSize="14dp" />
+
+    <View
+        android:id="@+id/pinnedheader_divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#eee" />
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="15dp"
+        android:gravity="center_vertical"
+        android:textIsSelectable="false"
+        android:background="@drawable/click_bg"
+        android:textSize="16dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#eee"
+        android:layout_marginLeft="10dp" />
+
+</LinearLayout>

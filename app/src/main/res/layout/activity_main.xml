@@ -44,4 +44,10 @@
         android:layout_height="wrap_content"
         android:text="单选选择"/>
 
+    <Button
+        android:id="@+id/select_city_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择城市"/>
+
 </LinearLayout>

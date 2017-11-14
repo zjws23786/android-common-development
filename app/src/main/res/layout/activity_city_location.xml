@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:poplar="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_topbar_style"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hua.librarytools.widget.PinnedHeaderListView
+            android:id="@+id/pinned_header_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:listSelector="@null"
+            android:divider="@null"
+            android:scrollbars="none" />
+
+        <com.hua.librarytools.widget.FancyIndexer
+            android:id="@+id/fancy_indexer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            poplar:widthOffset="15dip"
+            poplar:minFontSize="35"
+            poplar:maxFontSize="77"
+            poplar:tipFontSize="72"
+            poplar:maxBezierHeight="130dip"
+            poplar:maxBezierWidth="150dip"
+            poplar:additionalTipOffset="40dip"
+            poplar:fontColor="#a3bdeb" />
+
+        <TextView
+            android:id="@+id/tv_index_center"
+            android:visibility="gone"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:textSize="36sp"
+            android:background="@drawable/alpha_center_corner"
+            android:text="A" />
+
+    </RelativeLayout>
+
+</LinearLayout>
