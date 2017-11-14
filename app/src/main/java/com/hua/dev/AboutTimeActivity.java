@@ -1,19 +1,19 @@
 package com.hua.dev;
 
-import android.app.Activity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.hua.dev.base.BaseActivity;
+import com.hua.dev.base.po.BaseActivity;
 import com.hua.librarytools.picker.time.DatePicker;
+import com.hua.librarytools.picker.time.DateTimePicker;
 import com.hua.librarytools.utils.UIToast;
 
 import java.util.Calendar;
 
 public class AboutTimeActivity extends BaseActivity implements View.OnClickListener {
     private Button specific_date_btn;  //年月日
+    private Button date_time_btn; //年月日时分
 
     @Override
     protected void setLayout() {
@@ -23,11 +23,13 @@ public class AboutTimeActivity extends BaseActivity implements View.OnClickListe
     @Override
     protected void findViewById() {
         specific_date_btn = (Button) findViewById(R.id.specific_date_btn);
+        date_time_btn = (Button) findViewById(R.id.date_time_btn);
     }
 
     @Override
     protected void setListener() {
         specific_date_btn.setOnClickListener(this);
+        date_time_btn.setOnClickListener(this);
     }
 
     @Override
@@ -41,7 +43,11 @@ public class AboutTimeActivity extends BaseActivity implements View.OnClickListe
             case R.id.specific_date_btn:
                 specificDateMethod();
                 break;
+            case R.id.date_time_btn:
+                dataTimeMethod();
+                break;
         }
+
     }
 
     //年 月 日
@@ -94,6 +100,25 @@ public class AboutTimeActivity extends BaseActivity implements View.OnClickListe
             @Override
             public void onDayWheeled(int index, String day) {
                 picker.setTitleText(picker.getSelectedYear() + "-" + picker.getSelectedMonth() + "-" + day);
+            }
+        });
+        picker.show();
+    }
+
+    //年 月 日 时 分
+    private void dataTimeMethod() {
+        DateTimePicker picker = new DateTimePicker(this, DateTimePicker.HOUR_24);
+        picker.setDateRangeStart(2017, 1, 1);
+        picker.setDateRangeEnd(2025, 11, 11);
+        picker.setTimeRangeStart(0, 0);
+        picker.setTimeRangeEnd(23, 59);
+        picker.setCanLoop(false);
+        picker.setWeightEnable(true);
+        picker.setWheelModeEnable(true);
+        picker.setOnDateTimePickListener(new DateTimePicker.OnYearMonthDayTimePickListener() {
+            @Override
+            public void onDateTimePicked(String year, String month, String day, String hour, String minute) {
+                UIToast.showBaseToast(AboutTimeActivity.this, year + "-" + month + "-" + day + " " + hour + ":" + minute, R.style.AnimationToast);
             }
         });
         picker.show();

@@ -7,11 +7,23 @@
     android:orientation="vertical"
     tools:context="com.hua.dev.AddressPickActivity">
 
+    <include layout="@layout/app_topbar_style"/>
 
     <Button
         android:id="@+id/address_picker_btn"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:text="级联查询"
-        android:gravity="center"/>
+        android:layout_height="wrap_content"
+        android:text="省 城市 县级 级联查询"/>
+
+    <Button
+        android:id="@+id/provincial_city_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="省 城市 级联查询" />
+
+    <Button
+        android:id="@+id/city_county_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="城市 县级 级联查询"/>
 </LinearLayout>

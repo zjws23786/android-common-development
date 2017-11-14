@@ -21,7 +21,9 @@
         </activity>
         <activity android:name=".AddressPickActivity" />
         <activity android:name=".ApplicationCacheActivity" />
-        <activity android:name=".AboutTimeActivity"></activity>
+        <activity android:name=".AboutTimeActivity" />
+        <activity android:name=".ActivityInsideChoiceActivity" />
+        <activity android:name=".SingleChoiceActivity"></activity>
     </application>
 
 </manifest>

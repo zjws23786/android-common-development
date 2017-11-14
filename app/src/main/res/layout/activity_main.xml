@@ -32,4 +32,16 @@
         android:layout_height="wrap_content"
         android:text="时间控件"/>
 
+    <Button
+        android:id="@+id/activity_inside_choice_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在activity的控件中嵌入视图选择器"/>
+
+    <Button
+        android:id="@+id/single_option_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="单选选择"/>
+
 </LinearLayout>

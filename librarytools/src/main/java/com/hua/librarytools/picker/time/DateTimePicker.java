@@ -345,16 +345,16 @@ public class DateTimePicker extends WheelPicker {
     @Override
     protected View makeCenterView() {
         // 如果未设置默认项，则需要在此初始化数据
-        if ((dateMode == YEAR_MONTH_DAY || dateMode == YEAR_MONTH) && years.size() == 0) {
+        if ((dateMode == YEAR_MONTH_DAY || dateMode == YEAR_MONTH) && years.size() == 0) {   //年
 //            LogUtils.verbose(this, "init years before make view");
             initYearData();
         }
-        if (dateMode != NONE && months.size() == 0) {
+        if (dateMode != NONE && months.size() == 0) {   //月
 //            LogUtils.verbose(this, "init months before make view");
             int selectedYear = DateUtils.trimZero(getSelectedYear());
             changeMonthData(selectedYear);
         }
-        if ((dateMode == YEAR_MONTH_DAY || dateMode == MONTH_DAY) && days.size() == 0) {
+        if ((dateMode == YEAR_MONTH_DAY || dateMode == MONTH_DAY) && days.size() == 0) {  //日
 //            LogUtils.verbose(this, "init days before make view");
             int selectedYear;
             if (dateMode == YEAR_MONTH_DAY) {
@@ -365,11 +365,11 @@ public class DateTimePicker extends WheelPicker {
             int selectedMonth = DateUtils.trimZero(getSelectedMonth());
             changeDayData(selectedYear, selectedMonth);
         }
-        if (timeMode != NONE && hours.size() == 0) {
+        if (timeMode != NONE && hours.size() == 0) {  //时
 //            LogUtils.verbose(this, "init hours before make view");
             initHourData();
         }
-        if (timeMode != NONE && minutes.size() == 0) {
+        if (timeMode != NONE && minutes.size() == 0) {  //分
 //            LogUtils.verbose(this, "init minutes before make view");
             changeMinuteData(DateUtils.trimZero(selectedHour));
         }
@@ -388,7 +388,7 @@ public class DateTimePicker extends WheelPicker {
         }else{
             wheelViewParams = new LinearLayout.LayoutParams(WRAP_CONTENT,WRAP_CONTENT);
         }
-        labelViewParams = new LinearLayout.LayoutParams(WRAP_CONTENT,WRAP_CONTENT);
+        labelViewParams = new LinearLayout.LayoutParams(WRAP_CONTENT,WRAP_CONTENT);  //横向布局
 //        wheelViewParams.gravity = Gravity.CENTER;
         if(wheelModeEnable){
             final WheelView yearView = new WheelView(activity);

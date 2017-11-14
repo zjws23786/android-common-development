@@ -3,15 +3,16 @@ package com.hua.dev;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-import com.hua.dev.base.BaseActivity;
+import com.hua.dev.base.po.BaseActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private Button mOnAddressPickerBtn;
     private Button mCacheBtn;
     private Button timeBtn;
+    private Button activity_inside_choice_btn;
+    private Button single_option_btn;
 
     @Override
     protected void setLayout() {
@@ -23,6 +24,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mOnAddressPickerBtn = (Button) findViewById(R.id.onAddressPicker_btn);
         mCacheBtn = (Button) findViewById(R.id.cache_btn);
         timeBtn = (Button) findViewById(R.id.time_btn);
+        activity_inside_choice_btn = (Button) findViewById(R.id.activity_inside_choice_btn);
+        single_option_btn = (Button) findViewById(R.id.single_option_btn);
     }
 
     @Override
@@ -30,6 +33,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mOnAddressPickerBtn.setOnClickListener(this);
         mCacheBtn.setOnClickListener(this);
         timeBtn.setOnClickListener(this);
+        activity_inside_choice_btn.setOnClickListener(this);
+        single_option_btn.setOnClickListener(this);
     }
 
     @Override
@@ -49,6 +54,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.time_btn:
                 intent = new Intent(MainActivity.this, AboutTimeActivity.class);
+                break;
+            case R.id.activity_inside_choice_btn:
+                intent = new Intent(MainActivity.this, ActivityInsideChoiceActivity.class);
+                break;
+            case R.id.single_option_btn:
+                intent = new Intent(MainActivity.this, SingleChoiceActivity.class);
                 break;
         }
         if(intent != null){
