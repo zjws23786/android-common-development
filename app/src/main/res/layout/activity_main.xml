@@ -50,4 +50,10 @@
         android:layout_height="wrap_content"
         android:text="选择城市"/>
 
+    <Button
+        android:id="@+id/pull_down_refresh_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下拉刷新控件"/>
+
 </LinearLayout>

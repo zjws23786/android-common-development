@@ -14,6 +14,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button activity_inside_choice_btn;
     private Button single_option_btn;
     private Button select_city_btn;
+    private Button pull_down_refresh_btn;
 
     @Override
     protected void setLayout() {
@@ -28,6 +29,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         activity_inside_choice_btn = (Button) findViewById(R.id.activity_inside_choice_btn);
         single_option_btn = (Button) findViewById(R.id.single_option_btn);
         select_city_btn = (Button) findViewById(R.id.select_city_btn);
+        pull_down_refresh_btn = (Button) findViewById(R.id.pull_down_refresh_btn);
     }
 
     @Override
@@ -38,6 +40,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         activity_inside_choice_btn.setOnClickListener(this);
         single_option_btn.setOnClickListener(this);
         select_city_btn.setOnClickListener(this);
+        pull_down_refresh_btn.setOnClickListener(this);
     }
 
     @Override
@@ -66,6 +69,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.select_city_btn:
                 intent = new Intent(MainActivity.this, CityLocationActivity.class);
+                break;
+            case R.id.pull_down_refresh_btn:
+                intent = new Intent(MainActivity.this, PullToRefreshListActivity.class);
                 break;
         }
         if(intent != null){
