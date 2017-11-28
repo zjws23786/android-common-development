@@ -21,13 +21,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 适配Android7.0摄像机拍照问题 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.hua.dev.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
         <activity android:name=".AddressPickActivity" />
         <activity android:name=".ApplicationCacheActivity" />
         <activity android:name=".AboutTimeActivity" />
         <activity android:name=".ActivityInsideChoiceActivity" />
         <activity android:name=".SingleChoiceActivity" />
         <activity android:name=".CityLocationActivity" />
-        <activity android:name=".PullToRefreshListActivity"></activity>
+        <activity android:name=".PullToRefreshListActivity"/>
     </application>
 
 </manifest>
