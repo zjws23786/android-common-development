@@ -25,12 +25,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(path: ':librarytools')
+
+    /*网络框架*/
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
     compile 'com.alibaba:fastjson:1.1.56.android'
-    testCompile 'junit:junit:4.12'
-
-    /*网络框架*/
     compile 'io.reactivex:rxjava:1.0.14'
     compile 'io.reactivex:rxandroid:1.0.1'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
@@ -38,4 +37,5 @@ dependencies {
     compile 'org.ligboy.retrofit2:converter-fastjson:2.1.0'
     compile 'com.squareup.okhttp3:okhttp:3.3.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    testCompile 'junit:junit:4.12'
 }

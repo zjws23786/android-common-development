@@ -15,6 +15,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button single_option_btn;
     private Button select_city_btn;
     private Button pull_down_refresh_btn;
+    private Button bomb_box_btn;
 
     @Override
     protected void setLayout() {
@@ -30,6 +31,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         single_option_btn = (Button) findViewById(R.id.single_option_btn);
         select_city_btn = (Button) findViewById(R.id.select_city_btn);
         pull_down_refresh_btn = (Button) findViewById(R.id.pull_down_refresh_btn);
+        bomb_box_btn = (Button) findViewById(R.id.bomb_box_btn);
     }
 
     @Override
@@ -41,6 +43,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         single_option_btn.setOnClickListener(this);
         select_city_btn.setOnClickListener(this);
         pull_down_refresh_btn.setOnClickListener(this);
+        bomb_box_btn.setOnClickListener(this);
     }
 
     @Override
@@ -72,6 +75,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.pull_down_refresh_btn:
                 intent = new Intent(MainActivity.this, PullToRefreshListActivity.class);
+                break;
+            case R.id.bomb_box_btn:
+                intent = new Intent(MainActivity.this, BombBoxActivity.class);
                 break;
         }
         if(intent != null){

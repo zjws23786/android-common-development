@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".MyApplication"
@@ -32,13 +32,15 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
         <activity android:name=".AddressPickActivity" />
         <activity android:name=".ApplicationCacheActivity" />
         <activity android:name=".AboutTimeActivity" />
         <activity android:name=".ActivityInsideChoiceActivity" />
         <activity android:name=".SingleChoiceActivity" />
         <activity android:name=".CityLocationActivity" />
-        <activity android:name=".PullToRefreshListActivity"/>
+        <activity android:name=".PullToRefreshListActivity" />
+        <activity android:name=".BombBoxActivity"></activity>
     </application>
 
 </manifest>
