@@ -40,7 +40,8 @@
         <activity android:name=".SingleChoiceActivity" />
         <activity android:name=".CityLocationActivity" />
         <activity android:name=".PullToRefreshListActivity" />
-        <activity android:name=".BombBoxActivity"></activity>
+        <activity android:name=".BombBoxActivity" />
+        <activity android:name=".SelectorPhotoActivity"></activity>
     </application>
 
 </manifest>
