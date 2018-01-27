@@ -9,6 +9,11 @@
     android:paddingTop="12dp"
     tools:context="com.hua.dev.MainActivity">
 
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/onAddressPicker_btn"
         android:layout_width="wrap_content"

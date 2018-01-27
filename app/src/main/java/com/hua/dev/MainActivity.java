@@ -3,7 +3,9 @@ package com.hua.dev;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.hh.androidjni.PtlmanerJni;
 import com.hua.dev.base.po.BaseActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -21,6 +23,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void findViewById() {
+        TextView tv = (TextView) findViewById(R.id.tv);
+        PtlmanerJni jniTest = new PtlmanerJni();
+        tv.setText(jniTest.getTcb());
         mOnAddressPickerBtn = (Button) findViewById(R.id.onAddressPicker_btn);
         mCacheBtn = (Button) findViewById(R.id.cache_btn);
         timeBtn = (Button) findViewById(R.id.time_btn);
