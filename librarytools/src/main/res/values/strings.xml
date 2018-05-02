@@ -11,4 +11,9 @@
     <string name="xlistview_footer_hint_ready">松开载入更多</string>
 
     <string name="image_selector_limit_of_img_error">你最多只能选择 %1$d 张照片</string>
+
+    <string name="image">图片</string>
+    <string name="confirm">确定</string>
+    <string name="preview">预览</string>
+    <string name="select">选择</string>
 </resources>

@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApplication"
@@ -41,7 +42,22 @@
         <activity android:name=".CityLocationActivity" />
         <activity android:name=".PullToRefreshListActivity" />
         <activity android:name=".BombBoxActivity" />
-        <activity android:name=".SelectorPhotoActivity"></activity>
+        <activity android:name=".SelectorPhotoActivity" />
+        <activity android:name=".JniActivity" />
+        <activity android:name=".ImageAllActivity"></activity>
+
+        <activity
+            android:name="com.hua.librarytools.imageselector.ImageSelectorActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.hua.librarytools.imageselector.PreviewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.hua.librarytools.imageselector.ClipImageActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

@@ -68,4 +68,10 @@
         android:layout_height="wrap_content"
         android:text="选择图片"/>
 
+    <Button
+        android:id="@+id/test_jni_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试NDK"/>
+
 </LinearLayout>

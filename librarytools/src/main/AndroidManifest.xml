@@ -6,11 +6,11 @@
         android:supportsRtl="true">
 
         <activity
-            android:name=".selectorphoto.activity.ImageSelectorActivity"
+            android:name=".selectorphoto.activity.PhotoSelectorActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".selectorphoto.activity.ImagePreviewActivity"
+            android:name=".selectorphoto.activity.PhotoPreviewActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>

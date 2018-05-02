@@ -22,7 +22,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.hua.librarytools.R;
 
 import java.util.ArrayList;
@@ -38,13 +37,13 @@ import java.util.Set;
  * @description
  */
 
-public class ImagePreviewActivity extends AppCompatActivity {
+public class PhotoPreviewActivity extends AppCompatActivity {
 
     private static final String EXTRA_PATHS = "paths";
     private static final String EXTRA_FINISH = "finish";
 
     public static void show(Activity activity, int requestCode, ArrayList<String> paths) {
-        Intent i = new Intent(activity, ImagePreviewActivity.class);
+        Intent i = new Intent(activity, PhotoPreviewActivity.class);
         i.putStringArrayListExtra(EXTRA_PATHS, paths);
         activity.startActivityForResult(i, requestCode);
     }
@@ -217,8 +216,6 @@ public class ImagePreviewActivity extends AppCompatActivity {
             Glide.with(container.getContext())
                     .load(path)
                     .thumbnail(0.1f)
-                    .fitCenter()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(imageViewPreview);
 
             container.addView(view);

@@ -57,7 +57,7 @@ public class SelectorAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
             return;
         }
         final ImageView imageView = holder.getView(R.id.iv_img);
-        Glide.with(imageView.getContext()).load(item.getImgPath()).placeholder(getColor(pos)).centerCrop().into(imageView);
+        Glide.with(imageView.getContext()).load(item.getImgPath()).into(imageView);
         if (item.isChecked()) {
             zoomOut(holder.getRootView());
         } else {

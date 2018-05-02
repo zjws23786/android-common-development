@@ -38,7 +38,7 @@ import java.util.List;
  * @description
  */
 
-public class ImageSelectorActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class PhotoSelectorActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int REQUEST_CODE_PREVIEW = 1;
     private static final int READ_EXTERNAL_STORAGE_CODE = 2;
@@ -55,7 +55,7 @@ public class ImageSelectorActivity extends AppCompatActivity implements LoaderMa
     private int mMaxImgCount;
 
     public static void show(Activity activity, int requestCode, int maxCount) {
-        Intent i = new Intent(activity, ImageSelectorActivity.class);
+        Intent i = new Intent(activity, PhotoSelectorActivity.class);
         i.putExtra(EXTRA_KEY_MAX, maxCount);
         activity.startActivityForResult(i, requestCode);
     }
@@ -97,7 +97,7 @@ public class ImageSelectorActivity extends AppCompatActivity implements LoaderMa
                 mSelectSortPosList.remove((Integer) pos);
             } else {
                 if (mMaxImgCount > 0 && mSelectSortPosList.size() >= mMaxImgCount) {
-                    Toast.makeText(ImageSelectorActivity.this, String.format(getString(R.string.image_selector_limit_of_img_error), mMaxImgCount), Toast.LENGTH_LONG).show();
+                    Toast.makeText(PhotoSelectorActivity.this, String.format(getString(R.string.image_selector_limit_of_img_error), mMaxImgCount), Toast.LENGTH_LONG).show();
                     return -1;
                 }
                 mSelectSortPosList.add(pos);
@@ -155,7 +155,7 @@ public class ImageSelectorActivity extends AppCompatActivity implements LoaderMa
         }
 
         ArrayList<String> paths = mAdapter.getPathByPosList(mSelectSortPosList);
-        ImagePreviewActivity.show(this, REQUEST_CODE_PREVIEW, paths);
+        PhotoPreviewActivity.show(this, REQUEST_CODE_PREVIEW, paths);
     }
 
     private void initData() {
@@ -239,8 +239,8 @@ public class ImageSelectorActivity extends AppCompatActivity implements LoaderMa
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_PREVIEW) {
-            ArrayList<String> paths = ImagePreviewActivity.parsePaths(data);
-            boolean isFinish = ImagePreviewActivity.isFinsh(data);
+            ArrayList<String> paths = PhotoPreviewActivity.parsePaths(data);
+            boolean isFinish = PhotoPreviewActivity.isFinsh(data);
             if (isFinish) {
                 finishActivity(paths);
             } else {
