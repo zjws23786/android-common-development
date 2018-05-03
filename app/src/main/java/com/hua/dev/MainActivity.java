@@ -1,10 +1,23 @@
 package com.hua.dev;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.hua.dev.base.po.BaseActivity;
+import com.hua.librarytools.imageselector.utils.ImageSelectorUtils;
+import com.hua.librarytools.utils.ActionSheetDialog;
+import com.hua.librarytools.utils.FileUtils;
+import com.hua.librarytools.utils.ProviderUtil;
+
+import java.io.File;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -18,6 +31,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button bomb_box_btn;
     private Button selector_photo_btn;
     private Button test_jni_btn;
+    private Button bottom_dialog_btn;
+
+    public static final int REQUEST_CAMRARE=0x00000010; //相机
+    private static final int REQUEST_CODE = 0x00000011; //相册
 
     @Override
     protected void setLayout() {
@@ -36,6 +53,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         bomb_box_btn = (Button) findViewById(R.id.bomb_box_btn);
         selector_photo_btn = (Button) findViewById(R.id.selector_photo_btn);
         test_jni_btn = (Button) findViewById(R.id.test_jni_btn);
+        bottom_dialog_btn = (Button) findViewById(R.id.bottom_dialog_btn);
     }
 
     @Override
@@ -50,6 +68,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         bomb_box_btn.setOnClickListener(this);
         selector_photo_btn.setOnClickListener(this);
         test_jni_btn.setOnClickListener(this);
+        bottom_dialog_btn.setOnClickListener(this);
     }
 
     @Override
@@ -91,9 +110,60 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.test_jni_btn:
                 intent = new Intent(MainActivity.this, JniActivity.class);
                 break;
+            case R.id.bottom_dialog_btn:
+                new ActionSheetDialog(this)
+                        .builder()
+                        .setCancelable(false)
+                        .setCanceledOnTouchOutside(false)
+                        .addSheetItem("拍照", Color.BLUE,
+                                new ActionSheetDialog.OnSheetItemClickListener() {
+                                    @Override
+                                    public void onClick(int which) {
+                                        getImageFromCamera();
+                                    }
+                                })
+                        .addSheetItem("相册", Color.RED,
+                                new ActionSheetDialog.OnSheetItemClickListener() {
+                                    @Override
+                                    public void onClick(int which) {
+                                        ImageSelectorUtils.openPhoto(MainActivity.this, REQUEST_CODE, true, 0);
+                                    }
+                                }).show();
+                break;
         }
         if(intent != null){
             startActivity(intent);
+        }
+    }
+
+    protected void getImageFromCamera() {
+        photoImgPath = FileUtils.generateImgePathInStoragePath(this);
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        File cropFile = new File(photoImgPath);
+
+        Uri fileUri;
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
+            fileUri = Uri.fromFile(cropFile);
+        } else {
+            /**
+             * 7.0 调用系统相机拍照不再允许使用Uri方式，应该替换为FileProvider，并且这样可以解决MIUI系统上拍照返回size为0的情况
+             */
+            fileUri = FileProvider.getUriForFile(this, ProviderUtil.getFileProviderName(this), cropFile);
+        }
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file
+        startActivityForResult(intent, REQUEST_CAMRARE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CAMRARE && resultCode == RESULT_OK ) {
+            if (photoImgPath != null) {
+                Uri uri = Uri.fromFile(new File(photoImgPath));
+                Log.v("hjz",uri.toString());
+
+            }
+
         }
     }
 }

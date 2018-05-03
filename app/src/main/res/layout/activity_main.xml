@@ -1,77 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="12dp"
-    android:paddingTop="12dp"
-    tools:context="com.hua.dev.MainActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/onAddressPicker_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="地理位置级联控件"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/cache_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="本地缓存"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:paddingTop="12dp">
 
-    <Button
-        android:id="@+id/time_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="时间控件"/>
+        <Button
+            android:id="@+id/onAddressPicker_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="地理位置级联控件"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/activity_inside_choice_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="在activity的控件中嵌入视图选择器"/>
+        <Button
+            android:id="@+id/cache_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本地缓存" />
 
-    <Button
-        android:id="@+id/single_option_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="单选选择"/>
+        <Button
+            android:id="@+id/time_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间控件" />
 
-    <Button
-        android:id="@+id/select_city_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="选择城市"/>
+        <Button
+            android:id="@+id/activity_inside_choice_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="在activity的控件中嵌入视图选择器" />
 
-    <Button
-        android:id="@+id/pull_down_refresh_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="下拉刷新控件"/>
+        <Button
+            android:id="@+id/single_option_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="单选选择" />
 
-    <Button
-        android:id="@+id/bomb_box_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="弹出框位置设置"/>
+        <Button
+            android:id="@+id/select_city_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择城市" />
 
-    <Button
-        android:id="@+id/selector_photo_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="选择图片"/>
+        <Button
+            android:id="@+id/pull_down_refresh_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下拉刷新控件" />
 
-    <Button
-        android:id="@+id/test_jni_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试NDK"/>
+        <Button
+            android:id="@+id/bomb_box_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="弹出框位置设置" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/selector_photo_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择图片" />
+
+        <Button
+            android:id="@+id/test_jni_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试NDK" />
+
+        <Button
+            android:id="@+id/bottom_dialog_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="底部弹出框" />
+
+    </LinearLayout>
+</ScrollView>
