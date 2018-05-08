@@ -207,7 +207,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
                     }
                 }, LAST_REFRESH_TIME - times);
             }
-            mHeaderView.setState(PullToRefreshListViewHeader.STATE_NORMAL);
+            mHeaderView.setState(PullToRefreshListViewHeader.STATE_REFRESH_FINISH);
         }
     }
 
@@ -294,8 +294,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
             finalHeight = mHeaderViewHeight;
         }
         mScrollBack = SCROLLBACK_HEADER;
-        mScroller.startScroll(0, height, 0, finalHeight - height,
-                SCROLL_DURATION);
+        mScroller.startScroll(0, height, 0, finalHeight - height,SCROLL_DURATION);
         // trigger computeScroll
         invalidate();
     }
@@ -382,8 +381,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
                 mLastY = -1; // reset
                 if (getFirstVisiblePosition() == 0) {
                     // invoke refresh
-                    if (mEnablePullRefresh && ev.getPointerCount() == 1
-                            && mHeaderView.getVisiableHeight() > mHeaderViewHeight) {
+                    if (mEnablePullRefresh && ev.getPointerCount() == 1 && mHeaderView.getVisiableHeight() > mHeaderViewHeight) {
                         mPullRefreshing = true;
                         mHeaderView.setState(PullToRefreshListViewHeader.STATE_REFRESHING);
                         if (pullAndRefreshListViewListener != null) {
@@ -447,8 +445,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
     // }
     class YScrollDetector extends GestureDetector.SimpleOnGestureListener {
         @Override
-        public boolean onScroll(MotionEvent e1, MotionEvent e2,
-                                float distanceX, float distanceY) {
+        public boolean onScroll(MotionEvent e1, MotionEvent e2,float distanceX, float distanceY) {
             if (distanceY != 0 && distanceX != 0) {
 
             }
