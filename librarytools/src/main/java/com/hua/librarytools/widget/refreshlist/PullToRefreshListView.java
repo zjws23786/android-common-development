@@ -207,7 +207,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
                     }
                 }, LAST_REFRESH_TIME - times);
             }
-            mHeaderView.setState(PullToRefreshListViewHeader.STATE_NORMAL);
+            mHeaderView.setState(PullToRefreshListViewHeader.STATE_REFRESH_FINISH);
         }
     }
 

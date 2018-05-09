@@ -34,6 +34,7 @@ public class PullToRefreshListViewHeader extends LinearLayout {
     public final static int STATE_NORMAL = 0;  //普通（默认）
     public final static int STATE_READY = 1;  //准备模式
     public final static int STATE_REFRESHING = 2;  //正在刷新
+    public final static int STATE_REFRESH_FINISH = 3;  //刷新完成
     private LinearLayout timeLayout;// 显示刷新时间的布局
 
     public PullToRefreshListViewHeader(Context context) {
@@ -72,7 +73,7 @@ public class PullToRefreshListViewHeader extends LinearLayout {
         if (state == mState)
             return;
 
-        if (state == STATE_REFRESHING) { // 显示进度
+        if (state == STATE_REFRESHING || state == STATE_REFRESH_FINISH) { // 显示进度
             mArrowImageView.clearAnimation();
             mArrowImageView.setVisibility(View.GONE);
             mProgressBar.setVisibility(View.VISIBLE);
