@@ -60,6 +60,18 @@
             android:text="下拉刷新控件" />
 
         <Button
+            android:id="@+id/swipe_refresh_layout_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="官网swiperefreshlayout下拉刷新控件" />
+
+        <Button
+            android:id="@+id/smart_refresh_layout_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="智能下拉刷新控件" />
+
+        <Button
             android:id="@+id/bomb_box_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

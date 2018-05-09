@@ -1,0 +1,112 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hua.librarytools.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        app:srlAccentColor="@android:color/white">
+
+        <com.hua.librarytools.smartrefresh.layout.header.TwoLevelHeader
+            android:id="@+id/header"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/secondfloor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/image_secondfloor" />
+
+            <!--<ImageView-->
+                <!--android:id="@+id/secondfloor_content"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:alpha="0"-->
+                <!--android:contentDescription="@string/app_name"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@mipmap/image_secondfloor_content" />-->
+
+            <LinearLayout
+                android:id="@+id/secondfloor_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_e5e5e5"
+                android:alpha="0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="第二层布局内容"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <com.hua.librarytools.smartrefresh.layout.header.ClassicsHeader
+                android:id="@+id/classics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize" />
+        </com.hua.librarytools.smartrefresh.layout.header.TwoLevelHeader>
+
+        <ListView
+            android:id="@+id/demo_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="?attr/actionBarSize"/>
+    </com.hua.librarytools.smartrefresh.layout.SmartRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_fff">
+
+        <ImageView
+            android:id="@+id/arrow_left_iv"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:src="@drawable/left_return_icon" />
+
+        <TextView
+            android:id="@+id/app_top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:textColor="#464646"
+            android:textSize="16dp" />
+
+
+        <TextView
+            android:id="@+id/app_top_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="#464646"
+            android:textSize="16dp"
+            android:visibility="gone" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eee" />
+    </RelativeLayout>
+
+</FrameLayout>

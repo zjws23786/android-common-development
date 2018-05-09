@@ -28,6 +28,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button single_option_btn;
     private Button select_city_btn;
     private Button pull_down_refresh_btn;
+    private Button swipe_refresh_layout_btn;
+    private Button smart_refresh_layout_btn;
     private Button bomb_box_btn;
     private Button selector_photo_btn;
     private Button test_jni_btn;
@@ -50,6 +52,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         single_option_btn = (Button) findViewById(R.id.single_option_btn);
         select_city_btn = (Button) findViewById(R.id.select_city_btn);
         pull_down_refresh_btn = (Button) findViewById(R.id.pull_down_refresh_btn);
+        swipe_refresh_layout_btn = (Button) findViewById(R.id.swipe_refresh_layout_btn);
+        smart_refresh_layout_btn = (Button) findViewById(R.id.smart_refresh_layout_btn);
         bomb_box_btn = (Button) findViewById(R.id.bomb_box_btn);
         selector_photo_btn = (Button) findViewById(R.id.selector_photo_btn);
         test_jni_btn = (Button) findViewById(R.id.test_jni_btn);
@@ -65,6 +69,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         single_option_btn.setOnClickListener(this);
         select_city_btn.setOnClickListener(this);
         pull_down_refresh_btn.setOnClickListener(this);
+        swipe_refresh_layout_btn.setOnClickListener(this);
+        smart_refresh_layout_btn.setOnClickListener(this);
         bomb_box_btn.setOnClickListener(this);
         selector_photo_btn.setOnClickListener(this);
         test_jni_btn.setOnClickListener(this);
@@ -100,6 +106,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.pull_down_refresh_btn:
                 intent = new Intent(MainActivity.this, PullToRefreshListActivity.class);
+                break;
+            case R.id.swipe_refresh_layout_btn:
+                intent = new Intent(MainActivity.this, SwipeRefreshLayoutActivity.class);
+                break;
+            case R.id.smart_refresh_layout_btn:
+                intent = new Intent(MainActivity.this, SmartRefreshLayoutAllActivity.class);
                 break;
             case R.id.bomb_box_btn:
                 intent = new Intent(MainActivity.this, BombBoxActivity.class);

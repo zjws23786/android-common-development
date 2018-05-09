@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".MyApplication"
@@ -42,11 +42,15 @@
         <activity android:name=".SingleChoiceActivity" />
         <activity android:name=".CityLocationActivity" />
         <activity android:name=".PullToRefreshListActivity" />
+        <activity android:name=".SwipeRefreshLayoutActivity" />
+        <activity android:name=".SmartBezierRadarHeaderRefreshLayoutActivity" />
+        <activity android:name=".SmartClassicsHeaderRefreshLayoutActivity" />
+        <activity android:name=".SmartFalsifyHeaderRefreshLayoutActivity" />
+        <activity android:name=".SmartTwoLevelHeaderRefreshLayoutActivity" />
         <activity android:name=".BombBoxActivity" />
         <activity android:name=".SelectorPhotoActivity" />
         <activity android:name=".JniActivity" />
-        <activity android:name=".ImageAllActivity"></activity>
-
+        <activity android:name=".ImageAllActivity" />
         <activity
             android:name="com.hua.librarytools.imageselector.ImageSelectorActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -59,6 +63,7 @@
             android:name="com.hua.librarytools.imageselector.ClipImageActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".SmartRefreshLayoutAllActivity"></activity>
     </application>
 
 </manifest>
