@@ -58,7 +58,8 @@
             android:name="com.hua.librarytools.imageselector.ClipImageActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".CalendarActivity"></activity>
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".CustomControlActivity"></activity>
     </application>
 
 </manifest>
