@@ -32,6 +32,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button selector_photo_btn;
     private Button test_jni_btn;
     private Button bottom_dialog_btn;
+    private Button calendar_btn;
 
     public static final int REQUEST_CAMRARE=0x00000010; //相机
     private static final int REQUEST_CODE = 0x00000011; //相册
@@ -54,6 +55,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         selector_photo_btn = (Button) findViewById(R.id.selector_photo_btn);
         test_jni_btn = (Button) findViewById(R.id.test_jni_btn);
         bottom_dialog_btn = (Button) findViewById(R.id.bottom_dialog_btn);
+        calendar_btn = (Button) findViewById(R.id.calendar_btn);
     }
 
     @Override
@@ -69,6 +71,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         selector_photo_btn.setOnClickListener(this);
         test_jni_btn.setOnClickListener(this);
         bottom_dialog_btn.setOnClickListener(this);
+        calendar_btn.setOnClickListener(this);
     }
 
     @Override
@@ -129,6 +132,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                                         ImageSelectorUtils.openPhoto(MainActivity.this, REQUEST_CODE, true, 0);
                                     }
                                 }).show();
+                break;
+            case R.id.calendar_btn:
+                intent = new Intent(MainActivity.this, CalendarActivity.class);
                 break;
         }
         if(intent != null){

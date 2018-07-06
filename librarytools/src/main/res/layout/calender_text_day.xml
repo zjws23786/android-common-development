@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hua.librarytools.calendar.CircleTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/txt_calder_day"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:textSize="15dp"
+    android:textColor="#333333">
+
+</com.hua.librarytools.calendar.CircleTextView>
