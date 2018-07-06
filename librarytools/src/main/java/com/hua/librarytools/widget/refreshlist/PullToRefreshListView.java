@@ -3,7 +3,6 @@ package com.hua.librarytools.widget.refreshlist;
 import android.content.Context;
 import android.os.Handler;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,7 +16,7 @@ import android.widget.Scroller;
 import android.widget.TextView;
 
 import com.hua.librarytools.R;
-import com.hua.librarytools.utils.PreferencesUtils;
+import com.hua.librarytools.utils.SharedPreferenceUtils;
 import java.text.SimpleDateFormat;
 
 /**
@@ -482,11 +481,11 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
 
     private void setRefreshTime() {
         long currentTime = System.currentTimeMillis();
-        PreferencesUtils.setPreferences(this.context, "PullToRefresh", timeTag,currentTime);
+        SharedPreferenceUtils.setPreferences(this.context, "PullToRefresh", timeTag,currentTime);
     }
 
     private String getLastRefreshTime() {
-        long lastRefreshTime = PreferencesUtils.getPreference(this.context,"PullToRefresh", timeTag, System.currentTimeMillis());
+        long lastRefreshTime = SharedPreferenceUtils.getPreference(this.context,"PullToRefresh", timeTag, System.currentTimeMillis());
         String time = dateFormat.format(lastRefreshTime);
         return time;
     }

@@ -8,8 +8,15 @@ import android.webkit.WebView;
  * Created by Administrator on 2017/11/14 0014.
  */
 
-public class PreferencesUtils {
+public class SharedPreferenceUtils {
 
+    /**
+     *  保存boolean类型
+     * @param context 上下文
+     * @param preference  文件名
+     * @param key   在文件中对应的key值
+     * @param value key对应的vlaue值
+     */
     public static void setPreferences(Context context, String preference, String key, boolean value) {
         if(context != null) {
             SharedPreferences sharedPreferences = context.getSharedPreferences(preference, 0);
@@ -19,6 +26,9 @@ public class PreferencesUtils {
         }
     }
 
+    /**
+     * 保存long类型
+     */
     public static void setPreferences(Context context, String preference, String key, long value) {
         if(context != null) {
             SharedPreferences sharedPreferences = context.getSharedPreferences(preference, 0);
@@ -28,6 +38,9 @@ public class PreferencesUtils {
         }
     }
 
+    /**
+     * 保存String类型
+     */
     public static void setPreferences(Context context, String preference, String key, String value) {
         if(context != null) {
             SharedPreferences sharedPreferences = context.getSharedPreferences(preference, 0);
@@ -37,6 +50,9 @@ public class PreferencesUtils {
         }
     }
 
+    /**
+     * 保存int类型
+     */
     public static void setPreferences(Context context, String preference, String key, int value) {
         if(context != null) {
             SharedPreferences sharedPreferences = context.getSharedPreferences(preference, 0);
@@ -46,6 +62,14 @@ public class PreferencesUtils {
         }
     }
 
+    /**
+     * 获取String值
+     * @param context 上下文
+     * @param preference 文件名
+     * @param key
+     * @param defaultValue  默认值
+     * @return
+     */
     public static String getPreference(Context context, String preference, String key, String defaultValue) {
         if(context == null) {
             return null;
@@ -55,6 +79,9 @@ public class PreferencesUtils {
         }
     }
 
+    /**
+     *获取boolean值
+     */
     public static boolean getPreference(Context context, String preference, String key, boolean defaultValue) {
         if(context == null) {
             return defaultValue;
@@ -64,6 +91,9 @@ public class PreferencesUtils {
         }
     }
 
+    /**
+     * 获取long值
+     */
     public static long getPreference(Context context, String preference, String key, long defaultValue) {
         if(context == null) {
             return -1L;
@@ -73,6 +103,9 @@ public class PreferencesUtils {
         }
     }
 
+    /**
+     * 获取int值
+     */
     public static int getPreference(Context context, String preference, String key, int defaultValue) {
         if(context == null) {
             return -1;
@@ -82,6 +115,9 @@ public class PreferencesUtils {
         }
     }
 
+    /**
+     * 清除指定的文件的内容
+     */
     public static void clearPreference(Context context, String preference) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(preference, 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -89,25 +125,16 @@ public class PreferencesUtils {
         editor.commit();
     }
 
-    public static String getUserAgentSP(Context context) {
-        if(context == null) {
-            return null;
-        } else {
-            SharedPreferences sharedPreferences = context.getSharedPreferences("framwork", 0);
-            String result = sharedPreferences.getString("user-agent", (String)null);
-            if(result == null) {
-                WebView webView = new WebView(context);
-                String userAgent = webView.getSettings().getUserAgentString();
-                if(userAgent != null) {
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("user-agent", userAgent);
-                    editor.commit();
-                    result = userAgent;
-                }
-            }
-
-            return result;
-        }
+    /**
+     * 清除指定的文件的对应key的内容
+     */
+    public static void clearPreference(Context context, String preference, String key) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preference, 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(key);
+        editor.commit();
     }
+
 }
+
 
